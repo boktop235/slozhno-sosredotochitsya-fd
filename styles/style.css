@@ -8,7 +8,6 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  transition-duration: var(--transition-duration);
 }
 
 .header {
@@ -16,6 +15,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   min-height: 668px;
+  min-height: 100vh;
   margin-block-end: 10px;
   padding: 10px;
 }
@@ -51,14 +51,27 @@
   top: 10px;
   right: 10px;
   display: none;
-  padding-right: 7px;
+  padding-right: 10px;
   color: var(--accent-color);
   font-family: var(--font-family);
   font-weight: lighter;
   font-size: 18px;
   line-height: 25px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
+}
+
+.decor::after {
+  content: "";
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-left: 8px;
+  border-radius: 50%;
+  fill: var(--accent-color);
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  inline-size: 9px;
+  block-size: 9px;
 }
 
 body.theme-dark .decor {
@@ -86,12 +99,11 @@ body.theme-dark .decor {
   line-height: 100%;
   text-transform: lowercase;
   background: transparent;
-  transition-duration: var(--transition-duration);
   cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
-  border-color: var(--secondary-color, #ff007040);
+  border-color: var(--secondary-color);
 }
 
 .header__theme-menu-button:focus {
@@ -124,7 +136,7 @@ body.theme-dark .decor {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .text-decor {
@@ -141,7 +153,7 @@ body.theme-dark .decor {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .content__title {
@@ -165,7 +177,16 @@ body.theme-dark .decor {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
+  background-color: var(--accent-color, #ff0070);
+}
+
+.concentrate-better__article__title {
+  color: var(--subtitle-color, #000028);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: normal;
   background-color: var(--accent-color, #ff0070);
 }
 
@@ -235,17 +256,17 @@ body.theme-dark .decor {
   margin-block-end: 20px;
 }
 
-.section:last-of-type {
+.picture__section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.section:last-of-type .section__title {
+.picture__section .section__title {
   grid-column: 1/-1;
 }
 
-.section:last-of-type .section__image {
+.picture__section .section__image {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -270,31 +291,27 @@ body.theme-dark .decor {
   text-shadow: 2px 2px 0 var(--box-shadow, #ff0070);
 }
 
-@media (width>=768px) and (width<=1023px) {
+@media (width >= 768px) and (width <= 1023px) {
   .header {
     gap: 110px;
-    min-height: 100vh;
     padding: 130px 20px;
   }
 
   .decorated-zone::after {
     top: 20px;
     right: 20px;
-    border-inline-end: 1px solid var(--border-color, #ff0070);
-    border-block-start: 1px solid var(--border-color, #ff0070);
   }
 
   .decorated-zone::before {
     bottom: 20px;
     left: 20px;
-    border-inline-start: 1px solid var(--border-color, #ff0070);
-    border-block-end: 1px solid var(--border-color, #ff0070);
   }
 
   .decor {
     padding-top: 10px;
     padding-right: 20px;
   }
+
   .header__title {
     margin-inline-start: -20px;
   }
@@ -306,7 +323,7 @@ body.theme-dark .decor {
   }
 
   .main {
-    padding: 20px 20px 0px;
+    padding: 20px 20px 0;
   }
 
   .content__section {
@@ -346,36 +363,23 @@ body.theme-dark .decor {
     grid-column: 1 / -1;
   }
 
-  .section:last-of-type {
-    display: grid;
+  .picture__section {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .section:last-of-type .section__title {
-    grid-column: 1/-1;
-  }
-
-  .section:last-of-type .section__image {
-    width: 100%;
+  .picture__section .section__image {
     height: 100%;
-    object-fit: cover;
   }
 
-  .section:last-of-type .section__image:first-of-type,
-  .section:last-of-type .section__image:last-of-type {
+  .picture__section .section__image:first-of-type,
+  .picture__section .section__image:last-of-type {
     grid-column: span 2;
   }
 
-  .section:last-of-type .section__image:nth-of-type(2),
-  .section:last-of-type .section__image:nth-of-type(3) {
+  .picture__section .section__image:nth-of-type(2),
+  .picture__section .section__image:nth-of-type(3) {
     grid-row: span 2;
-  }
-
-  .section__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
   }
 
   .footer {
@@ -384,10 +388,6 @@ body.theme-dark .decor {
 }
 
 @media (width >= 1024px) {
-  .header {
-    min-height: 100vh;
-  }
-
   .header__theme-menu-list {
     flex-direction: row;
   }
@@ -396,18 +396,15 @@ body.theme-dark .decor {
     padding-top: 10px;
     padding-right: 20px;
   }
+
   .decorated-zone::after {
     top: 20px;
     right: 20px;
-    border-inline-end: 1px solid var(--border-color, #ff0070);
-    border-block-start: 1px solid var(--border-color, #ff0070);
   }
 
   .decorated-zone::before {
     bottom: 20px;
     left: 20px;
-    border-inline-start: 1px solid var(--border-color, #ff0070);
-    border-block-end: 1px solid var(--border-color, #ff0070);
   }
 
   .header__title {
@@ -422,10 +419,13 @@ body.theme-dark .decor {
   }
 
   .header__text {
-    width: 50%;
+    width: 49%;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
+
   .main {
-    padding: 20px 20px 0px;
+    padding: 20px 20px 0;
   }
 
   .content__section {
@@ -471,29 +471,22 @@ body.theme-dark .decor {
     grid-column: 1 / -1;
   }
 
-  .section:last-of-type {
-    display: grid;
+  .picture__section {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .section:last-of-type .section__title {
-    grid-column: 1/-1;
-  }
-
-  .section:last-of-type .section__image {
-    width: 100%;
+  .picture__section .section__image {
     height: 100%;
-    object-fit: cover;
   }
 
-  .section:last-of-type .section__image:first-of-type,
-  .section:last-of-type .section__image:last-of-type {
+  .picture__section .section__image:first-of-type,
+  .picture__section .section__image:last-of-type {
     grid-column: span 2;
   }
 
-  .section:last-of-type .section__image:nth-of-type(2),
-  .section:last-of-type .section__image:nth-of-type(3) {
+  .picture__section .section__image:nth-of-type(2),
+  .picture__section .section__image:nth-of-type(3) {
     grid-row: span 2;
   }
 
