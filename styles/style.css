@@ -50,30 +50,19 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--accent-color, #ff0070);
-}
-
-.decor::before {
-  content: "REC";
-  position: absolute;
-  top: -6px;
-  right: 18px;
-  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  display: none;
+  padding-right: 7px;
+  color: var(--accent-color);
+  font-family: var(--font-family);
+  font-weight: lighter;
   font-size: 18px;
-  line-height: 18px;
-  text-transform: uppercase;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.decor::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: 1px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
-  background-color: var(--accent-color, #ff0070);
+body.theme-dark .decor {
+  display: block;
 }
 
 .header__theme-menu {
@@ -302,6 +291,10 @@
     border-block-end: 1px solid var(--border-color, #ff0070);
   }
 
+  .decor {
+    padding-top: 10px;
+    padding-right: 20px;
+  }
   .header__title {
     margin-inline-start: -20px;
   }
@@ -399,6 +392,10 @@
     flex-direction: row;
   }
 
+  .decor {
+    padding-top: 10px;
+    padding-right: 20px;
+  }
   .decorated-zone::after {
     top: 20px;
     right: 20px;
