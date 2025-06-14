@@ -9,14 +9,14 @@
   --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
   --secondary-color: #35343040;
-  
+
   .decor {
     display: none;
   }
 }
 
 @media (prefers-color-scheme: light) {
-  :root{
+  :root {
     --accent-color: #ff8dcb;
     --bg-color: #fff1f7;
     --subtitle-color: #353430;
@@ -27,7 +27,7 @@
     --heading-text: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
     --secondary-color: #35343040;
-    
+
     .decor {
       display: none;
     }
