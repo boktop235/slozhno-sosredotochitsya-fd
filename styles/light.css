@@ -8,7 +8,7 @@
   --border-bottom: #353430;
   --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
-  --secondary-color: #35343040;
+  --secondary-color: #32312D66;
 
   .decor {
     display: none;
@@ -26,7 +26,7 @@
     --border-bottom: #353430;
     --heading-text: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
-    --secondary-color: #35343040;
+    --secondary-color: #32312D66;
 
     .decor {
       display: none;

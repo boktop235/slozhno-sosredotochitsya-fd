@@ -1,7 +1,4 @@
 :root.theme-dark {
-  :root {
-    --font-family: "IBM Plex Mono", monospace;
-    --transition-duration: 0.3s;
     --heading-text: #db00ff;
     --section-title-color: #ff0070;
     --bg-color: #000028;
@@ -12,10 +9,9 @@
     --border-color: #ff0070;
     --border-bottom: #f1b2ce;
     --bg-image: url(../images/cover-image-dark.png);
-    --secondary-color: #ff007040;
+    --secondary-color: #FF007066;
 
     .decor {
       display: block;
     }
-  }
 }

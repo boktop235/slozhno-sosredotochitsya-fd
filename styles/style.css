@@ -14,7 +14,8 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  min-height: 100vh;
+  min-height: 668px;
+  height: 100vh;
   margin-block-end: 10px;
   padding: 10px;
 }
@@ -53,7 +54,7 @@
   padding-right: 10px;
   color: var(--accent-color);
   font-family: var(--font-family);
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: normal;
@@ -181,12 +182,7 @@ body.theme-dark .decor {
 }
 
 .concentrate-better__article__title {
-  color: var(--subtitle-color, #000028);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 23.4px;
-  letter-spacing: normal;
-  background-color: var(--accent-color, #ff0070);
 }
 
 .article {
@@ -225,11 +221,6 @@ body.theme-dark .decor {
 .content__section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.concentrate {
-  display: grid;
   gap: 20px;
 }
 
